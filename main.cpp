@@ -53,7 +53,7 @@ static unsigned int* device_pixel_buffer = nullptr;
     }                                   \
 }
 
-unsigned int divergente(double cx, double cy, int max_iterations) {
+unsigned int divergenteCPU(double cx, double cy, int max_iterations) {
 
     int iter = 0;
 
@@ -96,7 +96,7 @@ void mandelbrotCpu()
             double y = y_max - j*dy;
 
             // C = X+Yi
-            unsigned int color = divergente(x,y, maxIteration);
+            unsigned int color = divergenteCPU(x,y, maxIteration);
             host_pixel_buffer[j*WIDTH + i] = color;
         }
     }
@@ -114,10 +114,26 @@ void mandelbrotCpuOMP()
             double y = y_max - j*dy;
 
             // C = X+Yi
-            unsigned int color = divergente(x,y, maxIteration);
+            unsigned int color = divergenteCPU(x,y, maxIteration);
             host_pixel_buffer[j*WIDTH + i] = color;
         }
     }
+}
+
+extern "C" void mandelbrotGPUkernel(unsigned int* buffer,
+unsigned int width, unsigned height
+, double x_min, double x_max, double y_min,
+double y_max, int max_iterations);
+
+extern "C"
+void copy_pallete(unsigned int* h_pallete);
+
+void mandelbrotGpu()
+{
+    mandelbrotGPUkernel(device_pixel_buffer, WIDTH, HEIGHT, x_min, x_max, y_min, y_max, maxIteration);
+
+    CHECK(cudaGetLastError());
+    CHECK(cudaMemcpy(host_pixel_buffer, device_pixel_buffer, WIDTH*HEIGHT*sizeof(unsigned int), cudaMemcpyDeviceToHost));
 }
 
 int main()
@@ -143,12 +159,15 @@ int main()
     // inicializar a 0 todo el buffer para que no se llene de bsaura
     memset(host_pixel_buffer, 0, buffer_size);
 
+    copy_pallete((unsigned int*)color_ramp);
+
     CHECK(cudaMalloc(&device_pixel_buffer, buffer_size));
 
     //--Inicializacion de la interfaz de la grafica
     sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Mandelbort CUDA");
 
-    mandelbrotCpu();
+    //mandelbrotCpu();
+    //mandelbrotGpu();
 
     //--textura
     sf::Texture texture;
@@ -191,7 +210,8 @@ int main()
         }
 
         //--Regenerar la imagen
-        mandelbrotCpu();
+        //mandelbrotCpu();
+        mandelbrotGpu();
         texture.update((const sf::Uint8*)host_pixel_buffer);
 
         //--contar FPS
@@ -221,8 +241,3 @@ int main()
 
     return 0;
 }
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.

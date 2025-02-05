@@ -1,16 +1,4 @@
 "C:\Program Files\JetBrains\CLion 2024.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.3.2/bin/ninja/win/x64/ninja.exe" -DCMAKE_C_COMPILER=CL.exe -DCMAKE_CXX_COMPILER=CL.exe -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=conan_provider.cmake -G Ninja -S C:\Users\fing.labcom\Downloads\Paralela\CLION\cuda_02_fractal\cuda_02_fractal -B C:\Users\fing.labcom\Downloads\Paralela\CLION\cuda_02_fractal\cuda_02_fractal\cmake-build-release
--- The CUDA compiler identification is NVIDIA 12.6.85
--- Detecting CUDA compiler ABI info
--- Detecting CUDA compiler ABI info - done
--- Check for working CUDA compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/bin/nvcc.exe - skipped
--- Detecting CUDA compile features
--- Detecting CUDA compile features - done
--- The CXX compiler identification is MSVC 19.41.34120.0
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
 -- CMake-Conan: first find_package() found. Installing dependencies with Conan
 -- CMake-Conan: Checking if a default profile exists
 C:\Users\fing.labcom\.conan2\profiles\default
@@ -97,119 +85,71 @@ Resolved version ranges
 ======== Computing necessary packages ========
 brotli/1.1.0: Main binary package '63fa1378b94465c42f6063f7622f977d75f1988f' missing
 brotli/1.1.0: Checking 1 compatible configurations
-brotli/1.1.0: Compatible configurations not found in cache, checking servers
-brotli/1.1.0: '75df3523cadfb3cb5a2c1cc2d61e8c640e1f9b96': compiler.version=193
 brotli/1.1.0: Found compatible package '75df3523cadfb3cb5a2c1cc2d61e8c640e1f9b96': compiler.version=193
 bzip2/1.0.8: Main binary package '885590b8d4960dd9be0d7cd4c17646ce20f8a9aa' missing
 bzip2/1.0.8: Checking 1 compatible configurations
-bzip2/1.0.8: Compatible configurations not found in cache, checking servers
-bzip2/1.0.8: '67bfcb7b4b78262b9d05495e479dcd92f747316b': compiler.version=193
 bzip2/1.0.8: Found compatible package '67bfcb7b4b78262b9d05495e479dcd92f747316b': compiler.version=193
 fmt/11.0.2: Main binary package '85363c8e7e7e43027bf93aac0c394853de6923e0' missing
 fmt/11.0.2: Checking 7 compatible configurations
 fmt/11.0.2: Found compatible package '1cf057972569a3a443d5b36ba81814a72a6467c9': compiler.cppstd=14, compiler.version=193
 ogg/1.3.5: Main binary package '0d6dd492a7d31822b2f2686ec67bbaef586416a3' missing
 ogg/1.3.5: Checking 1 compatible configurations
-ogg/1.3.5: Compatible configurations not found in cache, checking servers
-ogg/1.3.5: '7bfde258ff4f62f75668d0896dbddedaa7480a0f': compiler.version=193
 ogg/1.3.5: Found compatible package '7bfde258ff4f62f75668d0896dbddedaa7480a0f': compiler.version=193
 openal-soft/1.22.2: Main binary package '0d6dd492a7d31822b2f2686ec67bbaef586416a3' missing
 openal-soft/1.22.2: Checking 1 compatible configurations
-openal-soft/1.22.2: Compatible configurations not found in cache, checking servers
-openal-soft/1.22.2: '7bfde258ff4f62f75668d0896dbddedaa7480a0f': compiler.version=193
 openal-soft/1.22.2: Found compatible package '7bfde258ff4f62f75668d0896dbddedaa7480a0f': compiler.version=193
 zlib/1.3.1: Main binary package '0d6dd492a7d31822b2f2686ec67bbaef586416a3' missing
 zlib/1.3.1: Checking 1 compatible configurations
-zlib/1.3.1: Compatible configurations not found in cache, checking servers
-zlib/1.3.1: '7bfde258ff4f62f75668d0896dbddedaa7480a0f': compiler.version=193
 zlib/1.3.1: Found compatible package '7bfde258ff4f62f75668d0896dbddedaa7480a0f': compiler.version=193
 flac/1.4.3: Main binary package 'c0c9752f57bbe847fb99728d7015d290e102806d' missing
 flac/1.4.3: Checking 7 compatible configurations
-flac/1.4.3: Compatible configurations not found in cache, checking servers
-flac/1.4.3: 'df4c948c3c1c95444cb0cda32a42ac7992eb74f3': compiler.cppstd=14
-flac/1.4.3: '4a13f90ef61a0894738742d4e47ae08811ac5db5': compiler.cppstd=20
-flac/1.4.3: 'c654db589b0680e3eaa6725d069c9d2894f5317f': compiler.cppstd=23
-flac/1.4.3: 'f710e7f7e8379584a8fbad86de2007f08c1bf892': compiler.cppstd=14, compiler.version=193
 flac/1.4.3: Found compatible package 'f710e7f7e8379584a8fbad86de2007f08c1bf892': compiler.cppstd=14, compiler.version=193
 libpng/1.6.44: Main binary package '8ff616ba4ff1d638b8e6a308f5417275d7fecfba' missing
 libpng/1.6.44: Checking 1 compatible configurations
-libpng/1.6.44: Compatible configurations not found in cache, checking servers
-libpng/1.6.44: 'e0d2306461d10438fbd847f0556a0f0ac5653d3a': compiler.version=193
 libpng/1.6.44: Found compatible package 'e0d2306461d10438fbd847f0556a0f0ac5653d3a': compiler.version=193
 vorbis/1.3.7: Main binary package '72f391b16d5d09a00209f982eaaa0ecf9f82e698' missing
 vorbis/1.3.7: Checking 1 compatible configurations
-vorbis/1.3.7: Compatible configurations not found in cache, checking servers
-vorbis/1.3.7: '5716ed60be3e52a680aebcade966a2d4782db011': compiler.version=193
 vorbis/1.3.7: Found compatible package '5716ed60be3e52a680aebcade966a2d4782db011': compiler.version=193
 freetype/2.13.2: Main binary package 'f12fe537d2457525b972d539f07a3592021673bd' missing
 freetype/2.13.2: Checking 1 compatible configurations
-freetype/2.13.2: Compatible configurations not found in cache, checking servers
-freetype/2.13.2: '79f73b3fcb4ea3718b05e96b46594ae8f2ec3895': compiler.version=193
 freetype/2.13.2: Found compatible package '79f73b3fcb4ea3718b05e96b46594ae8f2ec3895': compiler.version=193
 sfml/2.6.1: Main binary package 'a539317afb1a192a01259fb5f3c6664fe31d6583' missing
 sfml/2.6.1: Checking 7 compatible configurations
-sfml/2.6.1: Compatible configurations not found in cache, checking servers
-sfml/2.6.1: '0f1c18613d6001964f3be17f5aa0677b29311afa': compiler.cppstd=14
-sfml/2.6.1: 'a0bb8322f7282f8075483c580ecae0ab8758bf3c': compiler.cppstd=20
-sfml/2.6.1: 'd6746954c1536f7d54466b943c97bddd186033bf': compiler.cppstd=23
-sfml/2.6.1: '851403b74edd45e618285de9a25d7d8a7e9d0eba': compiler.cppstd=14, compiler.version=193
 sfml/2.6.1: Found compatible package '851403b74edd45e618285de9a25d7d8a7e9d0eba': compiler.cppstd=14, compiler.version=193
 Requirements
-    brotli/1.1.0#d56d7bb9ca722942aba17369cb5c0519:75df3523cadfb3cb5a2c1cc2d61e8c640e1f9b96#249943a2756eb869cac284274651a4ab - Download (conancenter)
-    bzip2/1.0.8#d00dac990f08d991998d624be81a9526:67bfcb7b4b78262b9d05495e479dcd92f747316b#e4aa22ae3a31782994f99b4be58625c9 - Download (conancenter)
-    flac/1.4.3#112ca54377880fa91b13268d48e17871:f710e7f7e8379584a8fbad86de2007f08c1bf892#9e67149ad23e9bbd1b1b3565ca16e4fc - Download (conancenter)
+    brotli/1.1.0#d56d7bb9ca722942aba17369cb5c0519:75df3523cadfb3cb5a2c1cc2d61e8c640e1f9b96#249943a2756eb869cac284274651a4ab - Cache
+    bzip2/1.0.8#d00dac990f08d991998d624be81a9526:67bfcb7b4b78262b9d05495e479dcd92f747316b#e4aa22ae3a31782994f99b4be58625c9 - Cache
+    flac/1.4.3#112ca54377880fa91b13268d48e17871:f710e7f7e8379584a8fbad86de2007f08c1bf892#9e67149ad23e9bbd1b1b3565ca16e4fc - Cache
     fmt/11.0.2#5c7438ef4d5d69ab106a41e460ce11f3:1cf057972569a3a443d5b36ba81814a72a6467c9#31b7061b462822d18f9e1695678dbeff - Cache
-    freetype/2.13.2#5d2563803c8558d4ef47271a82c73d20:79f73b3fcb4ea3718b05e96b46594ae8f2ec3895#e9b07b14b986a38f75b0b42e3ea40f9e - Download (conancenter)
-    libpng/1.6.44#9e1aa08fb46946c7c91e4ae03bd49811:e0d2306461d10438fbd847f0556a0f0ac5653d3a#aae40fd00dee0d85633d5a33c7be64b9 - Download (conancenter)
-    ogg/1.3.5#062626875f5c8c59f069f76f148098ef:7bfde258ff4f62f75668d0896dbddedaa7480a0f#e927a574838328774c00363480fd0711 - Download (conancenter)
-    openal-soft/1.22.2#506a381e0b805519cba4a7f1ee653fed:7bfde258ff4f62f75668d0896dbddedaa7480a0f#119df173e15f3e8ac817e718fbec4185 - Download (conancenter)
+    freetype/2.13.2#5d2563803c8558d4ef47271a82c73d20:79f73b3fcb4ea3718b05e96b46594ae8f2ec3895#e9b07b14b986a38f75b0b42e3ea40f9e - Cache
+    libpng/1.6.44#9e1aa08fb46946c7c91e4ae03bd49811:e0d2306461d10438fbd847f0556a0f0ac5653d3a#aae40fd00dee0d85633d5a33c7be64b9 - Cache
+    ogg/1.3.5#062626875f5c8c59f069f76f148098ef:7bfde258ff4f62f75668d0896dbddedaa7480a0f#e927a574838328774c00363480fd0711 - Cache
+    openal-soft/1.22.2#506a381e0b805519cba4a7f1ee653fed:7bfde258ff4f62f75668d0896dbddedaa7480a0f#119df173e15f3e8ac817e718fbec4185 - Cache
     opengl/system#4df6fecde4084386beded3ed0e56e4ea:da39a3ee5e6b4b0d3255bfef95601890afd80709#0ba8627bd47edc3a501e8f0eb9a79e5e - Cache
-    sfml/2.6.1#a09fa95bd90d736d49b2de6418f5e909:851403b74edd45e618285de9a25d7d8a7e9d0eba#6eb1c3b590f2a0adac4e3dc0c0bcb617 - Download (conancenter)
-    vorbis/1.3.7#37e58f52e59a6232199b34ef402714a6:5716ed60be3e52a680aebcade966a2d4782db011#6bd7f8caee1c94c4eccf2f5b117619d1 - Download (conancenter)
-    zlib/1.3.1#f52e03ae3d251dec704634230cd806a2:7bfde258ff4f62f75668d0896dbddedaa7480a0f#20d10b761ec15eed7a1d61c86bc7415a - Download (conancenter)
+    sfml/2.6.1#a09fa95bd90d736d49b2de6418f5e909:851403b74edd45e618285de9a25d7d8a7e9d0eba#6eb1c3b590f2a0adac4e3dc0c0bcb617 - Cache
+    vorbis/1.3.7#37e58f52e59a6232199b34ef402714a6:5716ed60be3e52a680aebcade966a2d4782db011#6bd7f8caee1c94c4eccf2f5b117619d1 - Cache
+    zlib/1.3.1#f52e03ae3d251dec704634230cd806a2:7bfde258ff4f62f75668d0896dbddedaa7480a0f#20d10b761ec15eed7a1d61c86bc7415a - Cache
 Build requirements
 Skipped binaries
     minimp3/cci.20211201, stb/cci.20230920, meson/1.2.2, meson/1.3.2, ninja/1.12.1, pkgconf/2.1.0
 
 ======== Installing packages ========
-
--------- Downloading 10 packages --------
-brotli/1.1.0: Retrieving package 75df3523cadfb3cb5a2c1cc2d61e8c640e1f9b96 from remote 'conancenter' 
-brotli/1.1.0: Package installed 75df3523cadfb3cb5a2c1cc2d61e8c640e1f9b96
-brotli/1.1.0: Downloaded package revision 249943a2756eb869cac284274651a4ab
-bzip2/1.0.8: Retrieving package 67bfcb7b4b78262b9d05495e479dcd92f747316b from remote 'conancenter' 
-bzip2/1.0.8: Package installed 67bfcb7b4b78262b9d05495e479dcd92f747316b
-bzip2/1.0.8: Downloaded package revision e4aa22ae3a31782994f99b4be58625c9
-ogg/1.3.5: Retrieving package 7bfde258ff4f62f75668d0896dbddedaa7480a0f from remote 'conancenter' 
-ogg/1.3.5: Package installed 7bfde258ff4f62f75668d0896dbddedaa7480a0f
-ogg/1.3.5: Downloaded package revision e927a574838328774c00363480fd0711
-openal-soft/1.22.2: Retrieving package 7bfde258ff4f62f75668d0896dbddedaa7480a0f from remote 'conancenter' 
-openal-soft/1.22.2: Package installed 7bfde258ff4f62f75668d0896dbddedaa7480a0f
-openal-soft/1.22.2: Downloaded package revision 119df173e15f3e8ac817e718fbec4185
-zlib/1.3.1: Retrieving package 7bfde258ff4f62f75668d0896dbddedaa7480a0f from remote 'conancenter' 
-zlib/1.3.1: Package installed 7bfde258ff4f62f75668d0896dbddedaa7480a0f
-zlib/1.3.1: Downloaded package revision 20d10b761ec15eed7a1d61c86bc7415a
-flac/1.4.3: Retrieving package f710e7f7e8379584a8fbad86de2007f08c1bf892 from remote 'conancenter' 
-flac/1.4.3: Package installed f710e7f7e8379584a8fbad86de2007f08c1bf892
-flac/1.4.3: Downloaded package revision 9e67149ad23e9bbd1b1b3565ca16e4fc
-libpng/1.6.44: Retrieving package e0d2306461d10438fbd847f0556a0f0ac5653d3a from remote 'conancenter' 
-libpng/1.6.44: Package installed e0d2306461d10438fbd847f0556a0f0ac5653d3a
-libpng/1.6.44: Downloaded package revision aae40fd00dee0d85633d5a33c7be64b9
-vorbis/1.3.7: Retrieving package 5716ed60be3e52a680aebcade966a2d4782db011 from remote 'conancenter' 
-vorbis/1.3.7: Package installed 5716ed60be3e52a680aebcade966a2d4782db011
-vorbis/1.3.7: Downloaded package revision 6bd7f8caee1c94c4eccf2f5b117619d1
-freetype/2.13.2: Retrieving package 79f73b3fcb4ea3718b05e96b46594ae8f2ec3895 from remote 'conancenter' 
-freetype/2.13.2: Package installed 79f73b3fcb4ea3718b05e96b46594ae8f2ec3895
-freetype/2.13.2: Downloaded package revision e9b07b14b986a38f75b0b42e3ea40f9e
-sfml/2.6.1: Retrieving package 851403b74edd45e618285de9a25d7d8a7e9d0eba from remote 'conancenter' 
-sfml/2.6.1: Package installed 851403b74edd45e618285de9a25d7d8a7e9d0eba
-sfml/2.6.1: Downloaded package revision 6eb1c3b590f2a0adac4e3dc0c0bcb617
+brotli/1.1.0: Already installed! (1 of 12)
+bzip2/1.0.8: Already installed! (2 of 12)
 fmt/11.0.2: Already installed! (3 of 12)
+ogg/1.3.5: Already installed! (4 of 12)
+openal-soft/1.22.2: Already installed! (5 of 12)
 opengl/system: Already installed! (6 of 12)
+zlib/1.3.1: Already installed! (7 of 12)
+flac/1.4.3: Already installed! (8 of 12)
+libpng/1.6.44: Already installed! (9 of 12)
+vorbis/1.3.7: Already installed! (10 of 12)
+freetype/2.13.2: Already installed! (11 of 12)
+sfml/2.6.1: Already installed! (12 of 12)
 WARN: deprecated: Usage of deprecated Conan 1.X features that will be removed in Conan 2.X:
-WARN: deprecated:     'cpp_info.names' used in: sfml/2.6.1, bzip2/1.0.8, flac/1.4.3, ogg/1.3.5, libpng/1.6.44, fmt/11.0.2, openal-soft/1.22.2, brotli/1.1.0, zlib/1.3.1, freetype/2.13.2, vorbis/1.3.7
+WARN: deprecated:     'cpp_info.names' used in: freetype/2.13.2, sfml/2.6.1, ogg/1.3.5, bzip2/1.0.8, libpng/1.6.44, zlib/1.3.1, fmt/11.0.2, vorbis/1.3.7, flac/1.4.3, brotli/1.1.0, openal-soft/1.22.2
 WARN: deprecated:     'cpp_info.build_modules' used in: sfml/2.6.1, freetype/2.13.2, bzip2/1.0.8, openal-soft/1.22.2
-WARN: deprecated:     'env_info' used in: flac/1.4.3, bzip2/1.0.8, freetype/2.13.2
+WARN: deprecated:     'env_info' used in: flac/1.4.3, freetype/2.13.2, bzip2/1.0.8
 WARN: deprecated:     'cpp_info.filenames' used in: flac/1.4.3, freetype/2.13.2, opengl/system
 WARN: deprecated:     'user_info' used in: freetype/2.13.2
 
@@ -274,6 +214,6 @@ Install finished successfully
 -- Conan: Component target declared 'vorbis::vorbisenc-alias'
 -- Conan: Component target declared 'vorbis::vorbisfile-alias'
 -- Conan: Target declared 'vorbis::vorbis'
--- Configuring done (15.8s)
--- Generating done (0.0s)
+-- Configuring done (3.0s)
+-- Generating done (0.1s)
 -- Build files have been written to: C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-release

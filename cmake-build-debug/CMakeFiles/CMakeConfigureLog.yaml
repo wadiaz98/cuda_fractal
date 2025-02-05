@@ -571,3 +571,63 @@ events:
       Microsoft (R) Incremental Linker Version 14.41.34120.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.3.2/bin/cmake/win/x64/share/cmake-3.30/Modules/FindOpenMP.cmake:238 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.3.2/bin/cmake/win/x64/share/cmake-3.30/Modules/FindOpenMP.cmake:506 (_OPENMP_GET_FLAGS)"
+      - "conan_provider.cmake:635 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vqggxw"
+      binary: "C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vqggxw"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/conan/build/Debug/generators"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_openmp"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vqggxw'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.3.2/bin/ninja/win/x64/ninja.exe" -v cmTC_f3e38
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc -openmp /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_f3e38.dir\\OpenMPTryFlag.cpp.obj /FdCMakeFiles\\cmTC_f3e38.dir\\ /FS -c C:\\Users\\fing.labcom\\Downloads\\Paralela\\CLION\\cuda_02_fractal\\cuda_02_fractal\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-vqggxw\\OpenMPTryFlag.cpp
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.3.2\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f3e38.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_f3e38.dir\\OpenMPTryFlag.cpp.obj  /out:cmTC_f3e38.exe /implib:cmTC_f3e38.lib /pdb:cmTC_f3e38.pdb /version:0.0 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.3.2/bin/cmake/win/x64/share/cmake-3.30/Modules/FindOpenMP.cmake:440 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.3.2/bin/cmake/win/x64/share/cmake-3.30/Modules/FindOpenMP.cmake:580 (_OPENMP_GET_SPEC_DATE)"
+      - "conan_provider.cmake:635 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    description: "Detecting CXX OpenMP version"
+    directories:
+      source: "C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lglhbd"
+      binary: "C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lglhbd"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/conan/build/Debug/generators"
+    buildResult:
+      variable: "OpenMP_SPECTEST_CXX_"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/fing.labcom/Downloads/Paralela/CLION/cuda_02_fractal/cuda_02_fractal/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lglhbd'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.3.2/bin/ninja/win/x64/ninja.exe" -v cmTC_26f09
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc -openmp /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_26f09.dir\\OpenMPCheckVersion.cpp.obj /FdCMakeFiles\\cmTC_26f09.dir\\ /FS -c C:\\Users\\fing.labcom\\Downloads\\Paralela\\CLION\\cuda_02_fractal\\cuda_02_fractal\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-lglhbd\\OpenMPCheckVersion.cpp
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.3.2\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_26f09.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_26f09.dir\\OpenMPCheckVersion.cpp.obj  /out:cmTC_26f09.exe /implib:cmTC_26f09.lib /pdb:cmTC_26f09.pdb /version:0.0 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+...

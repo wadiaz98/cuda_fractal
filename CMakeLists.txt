@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.30)
 project(cuda_02_fractal CUDA)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17 )
+
+#Habilitar OpenMP
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 
 enable_language(CXX CUDA)
 find_package(fmt)

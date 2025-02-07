@@ -3,6 +3,7 @@
 #include <cuda_runtime.h>
 #include <SFML/Graphics.hpp>
 
+
 unsigned int _bswap32(unsigned int a) {
     return
         ((a & 0X000000FF) << 24) |
@@ -107,7 +108,7 @@ void mandelbrotCpuOMP()
     double dx = (x_max-x_min) / WIDTH;
     double dy = (y_max-y_min) / HEIGHT;
 
-#pragma omp parallel for default(none) shared(host_pixel_buffer, dx, dy, color_ramp, maxIteration)
+#pragma omp parallel for default (none)
     for(int i=0; i<WIDTH; i++) {
         for(int j=0;j<HEIGHT;j++) {
             double x = x_min + i*dx;
@@ -192,11 +193,22 @@ int main()
         text.setPosition(10, 10);
     }
 
+    sf::Text textOptions;
+    {
+        textOptions.setFont(font);
+        textOptions.setString("Options: [1] CPU, [2] CUDA, [3] OMP");
+        textOptions.setCharacterSize(24);
+        textOptions.setFillColor(sf::Color::White);
+        textOptions.setStyle(sf::Text::Bold);
+        textOptions.setPosition(10, window.getView().getSize().y-40);
+    }
+
     //--FPS
     sf::Clock clock;
     int frames = 0;
     int fps = 0;
 
+    int draw_type = 0; //0=CPU, 1=GPU
 
     while (window.isOpen())
     {
@@ -206,12 +218,53 @@ int main()
         {
             // Close window: exit
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
+            else if (event.type == sf::Event::KeyReleased)
+            {
+                if (event.key.code == sf::Keyboard::Num1)
+                {
+                    draw_type = 0;
+                    // mandelbrotCpu();
+                    // texture.update((const sf::Uint8*)host_pixel_buffer);
+                }
+                else if (event.key.code == sf::Keyboard::Num2)
+                {
+                    draw_type = 1;
+                    // mandelbrotGpu();
+                    // texture.update((const sf::Uint8*)host_pixel_buffer);
+                }
+                else if (event.key.code == sf::Keyboard::Num3)
+                {
+                    draw_type = 2;
+                    // mandelbrotCpuOMP();
+                    // texture.update((const sf::Uint8*)host_pixel_buffer);
+                }
+
+            }
         }
 
         //--Regenerar la imagen
         //mandelbrotCpu();
-        mandelbrotGpu();
+        // mandelbrotGpu();
+            std::string mode ="";
+            if (draw_type == 0)
+            {
+                mandelbrotCpu();
+                mode = "CPU";
+            }
+            else if (draw_type == 1)
+            {
+                mandelbrotGpu();
+                mode = "GPU";
+            }
+            else if (draw_type == 2)
+            {
+                mandelbrotCpuOMP();
+                mode = "OMP";
+            }
+
         texture.update((const sf::Uint8*)host_pixel_buffer);
 
         //--contar FPS
@@ -223,7 +276,7 @@ int main()
             clock.restart();
         }
 
-        auto msg = fmt::format("Mandelbrot Set, Iterations={}, FPS: {}", maxIteration, fps);
+        auto msg = fmt::format("Mandelbrot Set {}, Iterations={}, FPS: {}",mode, maxIteration, fps);
 
         text.setString(msg);
 
@@ -232,6 +285,7 @@ int main()
         {
             window.draw(sprite);
             window.draw(text);
+            window.draw(textOptions);
         }
 
         // Update the window
